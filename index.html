@@ -9,26 +9,28 @@
             text-align: center;
             margin: 0;
             padding: 0;
-            background-color: black;
+            background-image: url('https://estradas.com.br/wp-content/uploads/2018/03/RODOVIA-sc.jpg');
+            background-size: cover;
             color: white;
             overflow: hidden;
         }
         #sim, #nao {
-            padding: 20px 40px; /* Ajuste o tamanho do padding para alterar o tamanho dos botões */
-            background-color: green; /* A cor de fundo do botão SIM */
+            padding: 20px 40px;
+            background-color: green;
             color: white;
-            font-size: 24px; /* Ajuste o tamanho da fonte dos botões */
+            font-size: 24px;
             cursor: pointer;
-            margin: 10px; /* Espaçamento entre os botões */
-            border: none; /* Remover borda dos botões */
-            border-radius: 8px; /* Adicionar bordas arredondadas */
+            margin: 10px;
+            border: none;
+            border-radius: 8px;
         }
         #nao {
-            background-color: red; /* A cor de fundo do botão NÃO */
+            background-color: red;
+            position: absolute; /* Mantém o botão NÃO em posição absoluta */
         }
         h1 {
-            font-size: 36px; /* Ajuste o tamanho da fonte da pergunta */
-            padding-top: 20px; /* Ajuste do espaçamento superior da pergunta */
+            font-size: 36px;
+            padding-top: 20px;
         }
     </style>
 </head>
@@ -42,8 +44,8 @@
     <script>
         function moveNao() {
             const naoButton = document.getElementById('nao');
-            const randomX = Math.random() * window.innerWidth;
-            const randomY = Math.random() * window.innerHeight;
+            const randomX = Math.random() * (window.innerWidth - naoButton.clientWidth);
+            const randomY = Math.random() * (window.innerHeight - naoButton.clientHeight);
             naoButton.style.left = randomX + 'px';
             naoButton.style.top = randomY + 'px';
         }
